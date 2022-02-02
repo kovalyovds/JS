@@ -130,7 +130,7 @@ console.log(person);
 let fName = prompt('Ім`я');
 let mName = prompt('По батькові');
 let old = prompt('Вік');
-console.log('Вітаю',fName,mName, 'Тобі', old, 'років.')
+console.log('Вітаю', fName, mName, 'Тобі', old, 'років.')
 
 
 // - За допомогою оператора typeof визначити типи наступних змінних та вивести їх в консоль.
