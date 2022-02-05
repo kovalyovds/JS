@@ -14,26 +14,26 @@ if (friends.length >= 3) {
 //- Маємо 3 числа і між ним  нам потрібно знайти те що посередині. Знайти, яке з них є середнім
 // (більше одного, але менше за інше). Перевірити, чи знаходиться перше число між двома іншими.
 
-let a = 6;
-let b = 34;
-let c = 56;
-if ((a > b && a < c) || (a > c && a < b)) {
-    console.log('Середне число', a);
-} else if (b > a && b < c) {
-    console.log('Середне число', b);
-} else if (b > c && b < a) {
-    console.log('Середне число', b);
-} else if (c > a && c < b) {
-    console.log('Середне число', c);
-} else if (c > b && c < a) {
-    console.log('Середне число', c);
-} else if (a === b) {
-    console.log(a, 'равно', b);
-} else if (a === c) {
-    console.log(a, 'равно', c);
-} else {
-    console.log(b, 'равно', c)
-}
+// let a = 6;
+// let b = 34;
+// let c = 56;
+// if ((a > b && a < c) || (a > c && a < b)) {
+//     console.log('Середне число', a);
+// } else if (b > a && b < c) {
+//     console.log('Середне число', b);
+// } else if (b > c && b < a) {
+//     console.log('Середне число', b);
+// } else if (c > a && c < b) {
+//     console.log('Середне число', c);
+// } else if (c > b && c < a) {
+//     console.log('Середне число', c);
+// } else if (a === b) {
+//     console.log(a, 'равно', b);
+// } else if (a === c) {
+//     console.log(a, 'равно', c);
+// } else {
+//     console.log(b, 'равно', c)
+// }
 
 //- Перепишіть конструкцію if з використанням умовного оператора '?':
 //let result;
@@ -43,6 +43,14 @@ if ((a > b && a < c) || (a > c && a < b)) {
 //    result = 'Багато';
 //}
 
+let a = 4;
+let b = 2;
+let result = (a + b < 4) ? 'Мало' : 'Багато';
+console.log(result);
 
 //- Маємо будь яке число від -100 , 0 , +100 потрібно перевірити яким є число: позитивним, негативним або нулем
 //напишіть це тернарним оператором
+
+let x = -44;
+let y = (x===0) ? 'Нуль' : (x > 0) ? 'Позитивне' : 'Негативне';
+console.log(y);
