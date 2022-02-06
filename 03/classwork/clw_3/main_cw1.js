@@ -57,6 +57,22 @@ let simpsons = [
     },
 ];
 
+// for (let i = 0; i < simpsons.length; i++) {
+//     let simpson = simpsons[i];
+//     document.write(`<div>"${simpson.name} ${simpson.surname}" AGE - ${simpson.age} year</div>`);
+//     document.write(`<div>${simpson.info}</div>`);
+//     document.write(`<div><img src="${simpson.photo}" alt="#"></div>`)
+// }
+
+
+// for (let i = 0; i < simpsons.length; i++) {
+//     let simpson = simpsons[i];
+//     document.write(`<div>`);
+//     document.write(`<h2>${simpson.name} ${simpson.surname}. Age is - ${simpson.age}</h2>`);
+//     document.write(`<p>${simpson.info}</p>`);
+//     document.write(`<img src="${simpson.photo}" alt="#">`);
+//     document.write(`</div>`);
+// }
 
 /*
 Використовуючи данні з масиву, за допомоги document.write та циклу
