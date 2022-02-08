@@ -1,0 +1,18 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    width: 1580px;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+
+}
+
+.post-card {
+    width: 300px;
+    display: flex;
+    flex-wrap: wrap;
+}
