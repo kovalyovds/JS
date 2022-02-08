@@ -101,3 +101,11 @@ let products = [
         image: 'https://yogiproducts.com/wp-content/uploads/2009/03/YT-US-CAR-RelaxedMind-C23-202201-V2-3DFront_withGlow-300DPI-1.png'
     },
 ];
+
+// for (let i = 0; i < products.length; i++) {
+//     let product = products[i];
+//     document.write(`<div>`);
+//     document.write(`<h3>${product.title}. Price - ${product.price}</h3>`);
+//     document.write(`<img src="${product.image}" alt="#">`);
+//     document.write(`</div>`);
+// }

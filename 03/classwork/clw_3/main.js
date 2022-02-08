@@ -76,10 +76,10 @@ let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 // 9. всі попередні завдання (окрім 8), але в зворотньому циклі (с заду на перед)
 
 // 1
-// let i = 0;
-// while (i < arr.length) {
+// let i = arr.length - 1;
+// while (i >= 0) {
 //     console.log(arr[i]);
-//     i++;
+//     i--;
 // }
 //2
 // for (let i = arr.length - 1; i >= 0; i--) {
@@ -87,12 +87,12 @@ let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 //     console.log(arrElement);
 // }
 //3
-// i = 0;
-// while (i < arr.length) {
+// i = arr.length - 1;
+// while (i >= 0) {
 //     if (i % 2 !== 0) {
 //         console.log(arr[i]);
 //     }
-//     i++;
+//     i--;
 // }
 //4
 // for (let i = arr.length - 1; i >= 0; i--) {
@@ -102,12 +102,12 @@ let arr = [2, 17, 13, 6, 22, 31, 45, 66, 100, -18];
 //     }
 // }
 //5
-// let i = 0;
-// while (i < arr.length) {
+// let i = arr.length - 1;
+// while (i >= 0) {
 //     if (arr[i] % 2 === 0) {
 //         console.log(arr[i]);
 //     }
-//     i++;
+//     i--;
 // }
 //6
 // for (let i = arr.length - 1; i >= 0 ; i--) {
