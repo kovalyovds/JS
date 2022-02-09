@@ -256,17 +256,11 @@ let citiesWithId = [
 let newArrUser = [];
 
 for (let i = 0; i < usersWithId.length; i++) {
-    let user = usersWithId[i];
+    let usersWithIdElement = usersWithId[i];
     for (let j = 0; j < citiesWithId.length; j++) {
-        let city = citiesWithId[j];
-        if (user === 1 && city === 1) {
-            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
-        } else if (user === 2 && city === 2) {
-            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
-        } else if (user === 3 && city === 3) {
-            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
-        } else if (user === 4 && city === 4) {
-            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
+        let citiesWithIdElement = citiesWithId[j];
+        if (usersWithIdElement.id === citiesWithIdElement.user_id) {
+            newArrUser[i] = `name: ${usersWithIdElement.name}, city: ${citiesWithIdElement.city}`
         }
     }
 }
@@ -322,18 +316,21 @@ console.log(newArrUser);
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
 
 let abc = ['a', 'b', 'c'];
+let str = '';
 
 // for (let i = 0; i < abc.length; i++) {
 //     let abcElement = abc[i];
-//     document.write(`${abcElement}`);
+//     str += abcElement;
 // }
 
 // let i = 0;
 // while (i < 3) {
-//     document.write(`${abc[i]}`);
+//     str += abc[i];
 //     i++;
 // }
-
+//
 // for (let string of abc) {
-//     document.write(`${string}`);
+//     str += string;
 // }
+//
+// console.log(str);
