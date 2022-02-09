@@ -197,7 +197,17 @@ let arr = [];
 // 6. Є масив з числами [100,250,50,168,120,345,188], Які характеризують вартість окремої покупки. Обрахувати середній чек.
 
 // let price = [100, 250, 50, 168, 120, 345, 188];
-
+//
+// function sumPrice(array) {
+//     let result = 0;
+//     for (let i = 0; i < array.length; i++) {
+//         let arrayElement = array[i];
+//         result = result + arrayElement;
+//     }
+//     return (result / array.length);
+// }
+//
+// console.log(sumPrice(price));
 
 // 7. Створити масив з рандомними значеннями, помножити всі його елементи на 5 та перемістити їх в інший масив.
 
@@ -208,28 +218,61 @@ let arr = [];
 // }
 // console.log(arrNew);
 
-// 8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому, і якщо елемент є числом - додати його в інший масив.
+// 8. Створити масив з будь якими значеннями (стрінги, числа, і тд...). пройтись по ньому,
+// і якщо елемент є числом - додати його в інший масив.
+
+// let all = [1, 2, 3, 4, 5, 'qwe', 'asd', 'zxc', true, false, 444, 2345, 666];
 //
+// let newAll = [];
 //
+// for (let i = 0; i < all.length; i++) {
+//     let allElement = all[i];
+//     if (typeof allElement === 'number') {
+//         newAll[i] = allElement;
+//     }
+// }
 //
+// console.log(newAll);
+
 // - Дано 2 масиви з рівною кількістю об'єктів.
 // Масиви:
-//     let usersWithId = [
-//         {id: 1, name: 'vasya', age: 31, status: false},
-//         {id: 2, name: 'petya', age: 30, status: true},
-//         {id: 3, name: 'kolya', age: 29, status: true},
-//         {id: 4, name: 'olya', age: 28, status: false}
-//     ];
-//
-// let citiesWithId = [
-//     {user_id: 3, country: 'USA', city: 'Portland'},
-//     {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
-//     {user_id: 2, country: 'Poland', city: 'Krakow'},
-//     {user_id: 4, country: 'USA', city: 'Miami'}
-// ];
-//
-// З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id" .
-//     Записати цей об'єкт в новий масив
+
+let usersWithId = [
+    {id: 1, name: 'vasya', age: 31, status: false},
+    {id: 2, name: 'petya', age: 30, status: true},
+    {id: 3, name: 'kolya', age: 29, status: true},
+    {id: 4, name: 'olya', age: 28, status: false}
+];
+
+let citiesWithId = [
+    {user_id: 3, country: 'USA', city: 'Portland'},
+    {user_id: 1, country: 'Ukraine', city: 'Ternopil'},
+    {user_id: 2, country: 'Poland', city: 'Krakow'},
+    {user_id: 4, country: 'USA', city: 'Miami'}
+];
+
+// З'єднати в один об'єкт користувача та місто з відповідними "id" та "user_id". Записати цей об'єкт в новий масив
+
+let newArrUser = [];
+
+for (let i = 0; i < usersWithId.length; i++) {
+    let user = usersWithId[i];
+    for (let j = 0; j < citiesWithId.length; j++) {
+        let city = citiesWithId[j];
+        if (user === 1 && city === 1) {
+            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
+        } else if (user === 2 && city === 2) {
+            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
+        } else if (user === 3 && city === 3) {
+            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
+        } else if (user === 4 && city === 4) {
+            newArrUser[i] = `name: ${user.name}, city: ${city.city}`;
+        }
+    }
+}
+
+console.log(newArrUser);
+
 // Example:
 //     let usersWithCities = [
 //             {
@@ -250,10 +293,47 @@ let arr = [];
 //
 //
 // - Взяти масив з 10 чисел або створити його. Вивести в консоль тільки ті елементи, значення яких є парними.
+
+// let arr10 = [11, 12, 22, 23, 33, 34, 44, 45, 55, 56];
 //
-// - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив. За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
+// for (let i = 0; i < arr10.length; i++) {
+//     let arr10Element = arr10[i];
+//     if (arr10Element % 2 === 0) {
+//         console.log(arr10Element);
+//     }
+// }
+
+// - Взяти масив з 10 чисел або створити його. Створити 2й порожній масив.
+// За допомогою будь-якого циклу скопіювати значення одного масиву в інший.
+
+// let arr10 = [117, 127, 227, 237, 337, 347, 447, 457, 557, 567];
 //
+// let arr7 = [];
 //
+// for (let i = 0; i < arr10.length; i++) {
+//     let arr10Element = arr10[i];
+//     arr7[i] = arr10Element;
+// }
+//
+// console.log(arr7);
+
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for зібрати всі букви в слово.
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу while зібрати всі букви в слово.
 // - Дано масив: [ 'a', 'b', 'c'] . За допомогою циклу for of зібрати всі букви в слово.
+
+let abc = ['a', 'b', 'c'];
+
+// for (let i = 0; i < abc.length; i++) {
+//     let abcElement = abc[i];
+//     document.write(`${abcElement}`);
+// }
+
+// let i = 0;
+// while (i < 3) {
+//     document.write(`${abc[i]}`);
+//     i++;
+// }
+
+// for (let string of abc) {
+//     document.write(`${string}`);
+// }
