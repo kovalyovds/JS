@@ -49,23 +49,29 @@ let arrStr = [{name: 'Dima', age: 13}, {model: 'Camry'}];
 
 let newArrKey = [];
 
+// let key = (x) => {
+//     for (let x1 of x) {
+//         for (let keys in x1) {
+//             newArrKey.push(keys);
+//         }
+//     }
+//     return newArrKey;
+// };
+//
+// console.log(key(arrStr));
+
+// - Створити функцію яка приймає масив будь яких объектів, та повертає
+//   масив значень всіх обєктів
+// EXAMPLE:
+// [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
+
 let key = (x) => {
     for (let x1 of x) {
         for (let keys in x1) {
-            console.log(keys);
-            let q = 0;
-            keys[q] = keys;
-            newArrKey[q] = keys;
-            ++q;
+            newArrKey.push(x1[keys]);
         }
     }
-    return console.log(newArrKey);
+    return newArrKey;
 };
 
-key(arrStr);
-
-
-
-//     - Створити функцію яка приймає масив будь яких объектів, та повертає масив значень всіх обєктів
-// EXAMPLE:
-//     [{name: 'Dima', age: 13}, {model: 'Camry'}]  ===> [ Dima, 13, Camry ]
+console.log(key(arrStr));
