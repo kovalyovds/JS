@@ -16,14 +16,15 @@ let validator = (email) => {
     for (let i = 0; i < email.length; i++) {
         let element = email[i];
         if (email[i] !== ' ' || email[i] !== '_' || email[i] !== '-' || email[i] !== '/') { //і тому подібні знаки...
-            // check.push(email[i]);
+            check.push(email[i]);
             // for (let j = 0; j < check.length; j++) {
             //     let element1 = check[j];
-            if (email[i] === '@' && email[i + 1] !== '.' && email[i - 1] === 'string') {
-                console.log('OK');
-            }
+            // if (email[i] === '@' && email[i + 1] !== '.' && email[i - 1] === 'string') {
+            //     console.log('OK');
+            // }
         }
     }
+    return console.log(check);
 };
 
 validator('someeMAIL@iq.ua');
