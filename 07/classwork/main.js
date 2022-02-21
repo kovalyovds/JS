@@ -6,14 +6,42 @@
 // -- changeYear (newValue) - змінює рік випуску на значення newValue
 // -- addDriver (driver) - приймає об'єкт який "водій" з довільним набором полів, і додає його в поточний об'єкт car
 
-class Car {
-    model;
-    made;
-    year;
-    speed;
-    vol;
-
+function Car (model, made, year, maxSpeed, vol) {
+        this.model = model;
+        this.made = made;
+        this.year = year;
+        this.maxSpeed = maxSpeed;
+        this.vol = vol;
+        this.drive = function () {
+            console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
+        };
+        // this.info = function () {
+        //     for (let key of this) {
+        //         console.log()
+        //     }
+        // };
+        this.increaseMaxSpeed = function (newSpeed) {
+            this.maxSpeed = this.maxSpeed + newSpeed;
+            console.log(this.maxSpeed);
+        };
+        this.changeYear = function (newValue) {
+            this.year = newValue;
+        };
+        this.addDriver = function (driver) {
+            this.driver = driver;
+        };
 }
+
+let addCar = new Car('AUDI', 'Germany', 2020,260,2);
+console.log(addCar);
+addCar.drive();
+// addCar.info();
+addCar.increaseMaxSpeed(40);
+addCar.drive();
+addCar.changeYear(2022);
+// addCar.info();
+addCar.addDriver('Vova');
+console.log(addCar);
 
 // - (Те саме, тільки через клас)
 // Створити клас який дозволяє створювати об'єкти car, з властивостями модель, виробник, рік випуску, максимальна швидкість, об'єм двигуна. додати в об'єкт функції:
