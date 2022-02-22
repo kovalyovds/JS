@@ -1,6 +1,8 @@
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
-//
+
+
+
 // - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе:
 //   данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика,
 //   функція не чутлива до регістру (some@email.com,SOME@EMAIL.COM,some@EMAIL.com, і тд - однакові значення)
@@ -13,6 +15,7 @@
 let validator = (email) => {
     email.toLowerCase();
     let check = [];
+    let emailStr = '';
     for (let i = 0; i < email.length; i++) {
         let element = email[i];
         if (email[i] !== ' ' || email[i] !== '_' || email[i] !== '-' || email[i] !== '/') { //і тому подібні знаки...
@@ -24,7 +27,10 @@ let validator = (email) => {
             // }
         }
     }
-    return console.log(check);
+    for (const checkElement of check) {
+        emailStr += checkElement;
+    }
+    return console.log(emailStr);
 };
 
 validator('someeMAIL@iq.ua');
