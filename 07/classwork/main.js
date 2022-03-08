@@ -62,27 +62,27 @@ class Car {
         this.year = year;
         this.maxSpeed = maxSpeed;
         this.vol = vol;
-        this.drive = function () {
+    }
+        drive() {
             console.log(`їдемо зі швидкістю ${this.maxSpeed} на годину`);
         };
-        this.info = function () {
+        info() {
             for (let carKey in this) {
                 if (typeof this[carKey] !== 'function') {
                     console.log(`${carKey} - ${this[carKey]}`);
                 }
             }
-        }
-        this.increaseMaxSpeed = function (newSpeed) {
+        };
+        increaseMaxSpeed(newSpeed) {
             this.maxSpeed = this.maxSpeed + newSpeed;
             console.log(this.maxSpeed);
         };
-        this.changeYear = function (newValue) {
+        changeYear(newValue) {
             this.year = newValue;
         };
-        this.addDriver = function (driver) {
+        addDriver(driver) {
             this.driver = driver;
         };
-    }
 }
 
 let addCar = new Car('AUDI', 'Germany', 2020, 260, 2);

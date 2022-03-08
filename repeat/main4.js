@@ -141,9 +141,14 @@ fMaxArr(qwe);
 let fMinArr = (array) => {
     let min = array[0];
     for (const element of array) {
-        if
+        if (element < min) {
+            min = element;
+        }
     }
+    return console.log(min);
 }
+
+fMinArr(qwe);
 
 // - створити функцію яка приймає масив чисел, сумує значення елементів масиву та повертає його. Приклад [1,2,10]->13
 // - створити функцію яка приймає масив чисел та повертає середнє арифметичне його значень.
