@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form name="f1">
+    <label>
+        <input type="text" name="name">
+    </label>
+    <label>
+        <input type="number" name="age">
+    </label>
+    <button>save to storage</button>
+</form>
+
+<script>
+    // let f1 = document.forms.f1;
+    // f1.onsubmit = function (e) {
+    //     e.preventDefault();
+    //
+    //     let nameInput = e.target.username.value;
+    //     let ageInput = e.target.age.value;
+    //     let user = {nameInput, ageInput};
+    //     localStorage.setItem(nameInput, JSON.stringify(user));
+    // }
+
+    let f1 = document.forms.f1;
+    f1.onsubmit = function (e) {
+        e.preventDefault();
+
+        let nameInput = e.target.name.value;
+        let ageInput = e.target.age.value;
+        let user = {nameInput, ageInput};
+        localStorage.setItem(nameInput, JSON.stringify(user));
+    }
+</script>
+
+</body>
+</html>
