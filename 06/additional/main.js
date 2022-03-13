@@ -1,7 +1,15 @@
 // - Напишите функцию cutString(str, n), которая делит строку на подстроки, состоящие из n символов.
 // document.writeln(cutString('наслаждение',3)) // [нас,лаж,ден,ие]
 
+let cetString = (str, n) => {
+    let arr = [];
+    for (let i = 0; i < str.length; i += n) {
+        arr.push(str.substring(i, i + n));
+    }
+    return arr;
+};
 
+console.log(cetString('наслаждение', 3));
 
 // - Створити функцію-валідатор для адрес електронної пошти. Перевірка повинна включати в себе:
 //   данні до знака равлика(@), наявність равлика, крапку яка знаходиться не меньше ніж на 2 символ далі після равлика,
@@ -12,28 +20,28 @@
 // someeMAIL@i.ua
 // some.email@gmail.com
 
-let validator = (email) => {
-    email.toLowerCase();
-    let check = [];
-    let emailStr = '';
-    for (let i = 0; i < email.length; i++) {
-        let element = email[i];
-        if (email[i] !== ' ' || email[i] !== '_' || email[i] !== '-' || email[i] !== '/') { //і тому подібні знаки...
-            check.push(email[i]);
-            // for (let j = 0; j < check.length; j++) {
-            //     let element1 = check[j];
-            // if (email[i] === '@' && email[i + 1] !== '.' && email[i - 1] === 'string') {
-            //     console.log('OK');
-            // }
-        }
-    }
-    for (const checkElement of check) {
-        emailStr += checkElement;
-    }
-    return console.log(emailStr);
-};
-
-validator('someeMAIL@iq.ua');
+// let validator = (email) => {
+//     email.toLowerCase();
+//     let check = [];
+//     let emailStr = '';
+//     for (let i = 0; i < email.length; i++) {
+//         let element = email[i];
+//         if (email[i] !== ' ' || email[i] !== '_' || email[i] !== '-' || email[i] !== '/') { //і тому подібні знаки...
+//             check.push(email[i]);
+//             // for (let j = 0; j < check.length; j++) {
+//             //     let element1 = check[j];
+//             // if (email[i] === '@' && email[i + 1] !== '.' && email[i - 1] === 'string') {
+//             //     console.log('OK');
+//             // }
+//         }
+//     }
+//     for (const checkElement of check) {
+//         emailStr += checkElement;
+//     }
+//     return console.log(emailStr);
+// };
+//
+// validator('someeMAIL@iq.ua');
 
 //         if (email[i] === '@' && email[i + 2] === '.') {
 //             console.log('OK');
@@ -43,7 +51,6 @@ validator('someeMAIL@iq.ua');
 //         }
 //             }
 // };
-
 
 
 // Примітка
