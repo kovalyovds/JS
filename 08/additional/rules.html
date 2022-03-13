@@ -54,7 +54,11 @@
         let children = element.children;
         for (const child of children) {
             if (child.getAttribute('class') !== null) {
-            arrClass.push(child.classList.value);
+                let itemClass = child.classList.value;
+                let item = itemClass.split(' ');
+                for (let i = 0; i < item.length; i++) {
+                    arrClass.push(item[i]);
+                }
             }
             recursion(child);
         }
