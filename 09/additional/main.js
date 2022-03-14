@@ -235,54 +235,61 @@ let usersList = [
     }
 ];
 
-// for (const user of usersList) {
-//     let userDiv = document.createElement('div');
-//     userDiv.classList.add('users');
-//     for (const userKey in user) {
-//         console.log(typeof user[userKey])
-//         let userContent = document.createElement('div');
-//         userContent.classList.add('userContent');
-//         userDiv.appendChild(userContent);
-//         if (typeof user[userKey] !== 'object') {
-//             userContent.innerHTML = `<h3>${userKey} - ${user[userKey]}</h3>`;
-//         } else {
-//             for (const userKeyKey in user[userKey]) {
-//                 let userContentSmall = document.createElement('div');
-//                 userContentSmall.classList.add('userContentSmall');
-//                 userContentSmall.innerHTML = `<h4>${userKeyKey} - ${user[userKey][userKeyKey]}</h4>`;
-//                 userContent.appendChild(userContentSmall);
-//             }
-//         }
-//     }
-//     document.body.appendChild(userDiv);
-// }
-
-let usersArr = (array) => {
-    for (const user of array) {
-        let userDiv = document.createElement('div');
-        userDiv.classList.add('users');
-
-        function f() {
-            for (const userKey in user) {
-                let userContent = document.createElement('div');
-                userContent.classList.add('userContent');
-                userDiv.appendChild(userContent);
-                if (typeof user[userKey] !== 'object') {
-                    userContent.innerHTML = `<h3>${userKey} - ${user[userKey]}</h3>`;
+for (const user of usersList) {
+    let userDiv = document.createElement('div');
+    userDiv.classList.add('user');
+    for (const userKey in user) {
+        let userContent = document.createElement('div');
+        userContent.classList.add('userContent');
+        userDiv.appendChild(userContent);
+        if (typeof user[userKey] !== 'object') {
+            userContent.innerHTML = `<h3>${userKey} - ${user[userKey]}</h3>`;
+        } else {
+            let userContentSmall = document.createElement('div');
+            userContentSmall.classList.add('userContentSmall');
+            userContent.appendChild(userContentSmall);
+            for (const userKeyKey in user[userKey]) {
+                let qwe = user[userKey][userKeyKey];
+                let userContentSmallqwe = document.createElement('div');
+                if (typeof qwe !== 'object') {
+                    userContentSmallqwe.classList.add('userContentSmallqwe');
+                    userContentSmallqwe.innerHTML = `<h4>${userKeyKey} - ${user[userKey][userKeyKey]}</h4>`;
+                    userContentSmall.appendChild(userContentSmallqwe);
+                } else {
+                    let little = document.createElement('div');
+                    for (const qweKey in qwe) {
+                        console.log(qweKey)
+                        little.classList.add('little');
+                        little.innerHTML = `<h4>${qweKey} - ${qwe[qweKey]}</h4>`;
+                        userContentSmallqwe.appendChild(little);
+                    }
                 }
             }
         }
-
-        document.body.appendChild(userDiv);
-        return f()
     }
+    document.body.appendChild(userDiv);
 }
 
-usersArr(usersList)
-
-// for (const user of usersList) {
-//     let userDiv = document.createElement('div');
-//     userDiv.classList.add('users');
+// let usersArr = (array) => {
+//     for (let user of array) {
+//         let userDiv = document.createElement('div');
+//         userDiv.classList.add('user');
 //
-//
+//         let foo = (element) => {
+//             for (const userKey in element) {
+//                 let userContent = document.createElement('div');
+//                 userContent.classList.add(`${userKey}`);
+//                 userDiv.appendChild(userContent);
+//                 if (typeof element[userKey] !== 'object') {
+//                     userContent.innerHTML = `<h3>${userKey} - ${element[userKey]}</h3>`;
+//                 } else {
+//                     foo(element[userKey]);
+//                 }
+//             }
+//         }
+//         foo(user)
+//         document.body.appendChild(userDiv);
+//     }
 // }
+//
+// usersArr(usersList)
