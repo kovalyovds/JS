@@ -234,7 +234,7 @@ let usersList = [
         }
     }
 ];
-debugger
+
 for (const user of usersList) {
     let userDiv = document.createElement('div');
     userDiv.classList.add('user');
@@ -256,12 +256,11 @@ for (const user of usersList) {
                     userContentSmallqwe.innerHTML = `<h4>${userKeyKey} - ${user[userKey][userKeyKey]}</h4>`;
                     userContentSmall.appendChild(userContentSmallqwe);
                 } else {
-                    let little = document.createElement('div');
-                    little.classList.add('little');
-                    userContentSmallqwe.appendChild(little);
-                    for (const qweKey in qwe) {
-                        console.log(qweKey)
-                        little.innerHTML = `<h5>${qweKey} - ${qwe[qweKey]}</h5>`;
+                    for (const item in user[userKey][userKeyKey]) {
+                        let little = document.createElement('div');
+                        little.classList.add('little');
+                        userContentSmall.appendChild(little);
+                        little.innerHTML = `<h5>${item} - ${user[userKey][userKeyKey][item]}</h5>`;
                     }
                 }
             }
