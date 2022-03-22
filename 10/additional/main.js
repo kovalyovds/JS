@@ -18,6 +18,18 @@ document.onclick = function (e) {
 //   При лівому кліку миші  зробить popup (спливаючий блок) в якому буде вся інформація про блок.
 //   Інформація яку потрібно вивести в popup: Назва тегу, список класів, список ід, розміри в форматі висота*ширина
 
+document.onclick = function (e) {
+    let div = document.createElement('div');
+    div.style.display = 'block'
+    div.style.position = 'absolute'
+    div.style.zIndex = '1'
+    let targetTag = e.target.tagName
+    let divTag = document.createElement('div');
+    divTag.innerText = `TAG - ${targetTag}`
+    div.append(divTag);
+    document.body.appendChild(div);
+}
+
 // -- взять массив пользователей
 // let usersWithAddress = [
 //     {id:1,name: 'vasya', age: 31, status: false, address: {city: 'Lviv', street: 'Shevchenko', number: 16}},
