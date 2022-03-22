@@ -148,11 +148,7 @@ new Promise((resolve, reject) => {
         }, 800);
     })
 }).then(time => {
-    return new Promise((resolve, reject) => {
         setTimeout(() => {
             console.log(`Online lesson okten о ${time}:00`);
-            time++;
-            resolve(time);
         }, 800);
-    })
 });
