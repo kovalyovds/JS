@@ -61,4 +61,4 @@ console.log(fReg('asdf'));
 
 let capitalize = (str) => str.split(' ').map(word=>word.charAt(0).toUpperCase()+word.slice(1)).join(' ');
 
-console.log(capitalize('okten hi you are welcome'));
+console.log(capitalize('okten hi you are welcome saavd sadf a wf wadf a awf as'));
