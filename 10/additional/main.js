@@ -66,3 +66,8 @@ document.onclick = function (e) {
 //
 //     Завдання важке для розуміння, але дуже легке в реалізації. Тут треба буде погуглити
 // *** При виділені сегменту тексту на сторінці він стає жирний/курсивний/або якось іншим способом змінює свій стан
+
+document.onselectionchange = function() {
+    let selection = document.getSelection().toString();
+    console.log(selection);
+}
