@@ -13,18 +13,17 @@ function userCard(nums) {
         console.log('Введіть число від 1 до 3');
     }
 
-    // let historyLogs = [];
-    // function Logs(operationType, credits, operationTime) {
-    //     this.operationType = operationType;
-    //     this.credits = credits;
-    //     this.operationTime = operationTime;
-    // }
+    historyLogs = [];
+    function Logs(operationType, credits, operationTime) {
+        this.operationType = operationType;
+        this.credits = credits;
+        this.operationTime = operationTime;
+    }
 
-    let balance = 100;
     this.getCardOptions = function (balance = 100, transactionLimit = 100) {
         this.balance = balance;
         this.transactionLimit = transactionLimit;
-        this.historyLogs = [];
+        this.historyLogs = historyLogs;
         this.key = this.nums;
         let option = {
             balance: `${this.balance}`, transactionLimit: `${this.transactionLimit}`,
@@ -33,33 +32,50 @@ function userCard(nums) {
         console.log(option);
     }
     this.putCredits = function (credit) {
-
-        // let operationType = 'Received credits';
-        // let time = new Date();
-        // let operationTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()}, ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-        // historyLogs.push(`operationType: ${operationType}, credits: ${credit}, operationTime: ${operationTime}`)
+        let operationType = 'Received credits';
+        let time = new Date();
+        let operationTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()}, ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
         this.balance = credit;
-        console.log(`balance: ${this.balance}`);
-        this.transactionLimit--;
+
+        function logs() {
+            let log = new Logs(`${operationType}`, `${credit}`, `${operationTime}`);
+            historyLogs.push(log);
+            return this.transactionLimit--;
+        }
+
+        logs();
     }
     this.takeCredits = function (cash) {
-        // let operationTypeTake = 'Withdrawal of credits';
-        // let time = new Date();
-        // let operationTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()}, ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-        // historyLogs.push(`operationType: ${operationTypeTake}, credits: ${cash}, operationTime: ${operationTime}`)
+        let operationTypeTake = 'Withdrawal of credits';
+        let time = new Date();
+        let operationTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()}, ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
         if ((this.balance - cash) >= 0 && this.transactionLimit > 0) {
             this.cash = this.balance - cash;
         } else {
             console.log('Error "Недостатньо коштів"');
         }
-        this.transactionLimit--;
+
+        function logs() {
+            let log = new Logs(`${operationTypeTake}`, `${cash}`, `${operationTime}`);
+            historyLogs.push(log);
+            return this.transactionLimit--;
+        }
+
+        logs();
     }
     this.setTransactionLimit = function (limit) {
-        // let operationTypeSet = 'Transaction limit change';
-        // let time = new Date();
-        // let operationTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()}, ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
-        // historyLogs.push(`operationType: ${operationTypeSet}, credits: ${limit}, operationTime: ${operationTime}`)
+        let operationTypeSet = 'Transaction limit change';
+        let time = new Date();
+        let operationTime = `${time.getDate()}/${time.getMonth()}/${time.getFullYear()}, ${time.getHours()}:${time.getMinutes()}:${time.getSeconds()}`
         this.transactionLimit = limit;
+
+        function logs() {
+            let log = new Logs(`${operationTypeSet}`, `${limit}`, `${operationTime}`);
+            historyLogs.push(log);
+            return this.transactionLimit--;
+        }
+
+        logs();
     }
     this.transferCredits = function (credits, cardUser) {
         if (this.balance >= (credits * 1.005) && this.transactionLimit > 0) {
@@ -73,9 +89,28 @@ function userCard(nums) {
     }
 }
 
-let card3 = new userCard(3);
+class UserAccount {
+    constructor(name) {
+        this.name = name;
+    }
 
-console.log(card3);
+    cards = [];
+
+    addCard(number) {
+        userCard(number)
+    }
+
+    getCardByKey(num) {
+        if (num > 0 && num <= 3) {
+            console.log(cards[num - 1])
+        } else {
+            console.log('Введіть число від 1 до 3');
+        }
+    }
+}
+
+
+let card3 = new userCard(3);
 
 card3.putCredits(150);
 
@@ -89,10 +124,6 @@ card3.transferCredits()
 
 card3.getCardOptions();
 
-let card1 = new userCard(1);
+let user = new UserAccount('Bob');
 
-card3.transferCredits(40, card1)
-
-card1.getCardOptions()
-
-
+user.addCard(1);
